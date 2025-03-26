@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useCallback } from "react";
 import {
   View,
   Image,
@@ -14,7 +14,7 @@ import { colors } from "@/styles/colors";
 import { categories } from "@/utils/categories";
 import { Link } from "@/components/link";
 import { Option } from "@/components/option";
-import { router } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
 import { Categories } from "@/components/categories";
 import { linkStorage, LinkStorage } from "@/storage/link-storage";
 

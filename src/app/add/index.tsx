@@ -31,6 +31,14 @@ export default function Add() {
         url,
         category,
       });
+      // cadastrado de link e redireciona o usuário para a página anterior
+      Alert.alert("Sucesso", "Link adicionado com sucesso", [
+        {
+          text: "OK",
+          onPress: () => router.back(),
+        },
+      ]);
+
       // listar como está essa coleção
       // const data = await LinkStorage.getLinks();
       // console.log(data);

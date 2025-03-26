@@ -7,6 +7,7 @@ import {
   Modal,
   Text,
   Alert,
+  Linking,
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { styles } from "./styles";
@@ -62,6 +63,16 @@ export default function Index() {
     ]);
   }
 
+  async function handleOpen() {
+    try {
+      await Linking.openURL(link.url);
+      setShowModal(false);
+    } catch (error) {
+      Alert.alert("Link", "Não foi possível abrir o link");
+      console.log(error);
+    }
+  }
+
   useFocusEffect(
     useCallback(() => {
       getShowLinks();
@@ -113,7 +124,11 @@ export default function Index() {
                 variant="secondary"
                 onPress={handleRemove}
               />
-              <Option name="Abrir" icon="language" />
+              <Option
+                name="Abrir"
+                icon="language"
+                onPress={() => handleOpen()}
+              />
             </View>
           </View>
         </View>

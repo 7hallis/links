@@ -29,9 +29,11 @@ export default function Index() {
       Alert.alert("Erro", "Não foi possível carregar os links");
     }
   }
-  useEffect(() => {
-    getShowLinks();
-  }, [category]);
+  useFocusEffect(
+    useCallback(() => {
+      getShowLinks();
+    }, [])
+  );
   return (
     <View style={styles.container}>
       <View style={styles.header}>

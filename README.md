@@ -39,7 +39,7 @@ Este projeto tem como objetivo criar um aplicativo mobile para salvar e gerencia
 
 ```bash
 git clone https://github.com/7hallis/links.git
-cd seu-repositorio
+cd links
 ```
 
 3. **Instalando as Dependências:**
